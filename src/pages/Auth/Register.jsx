@@ -8,7 +8,7 @@ const Register = () => {
   const handleSubmit = () => {};
 
   return (
-    <div>
+    <div id="register">
       <h2>ReactGram</h2>
       <p className="subtitle">Cadastre-se para viualizar fotos incriveis!</p>
       <form onSubmit={handleSubmit}>
