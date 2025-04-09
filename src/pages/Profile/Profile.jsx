@@ -4,7 +4,7 @@ import { uploads } from "../../utils/config";
 // Components
 import Message from "../../components/Message";
 import { Link } from "react-router-dom";
-import { BsFillEyeFill, BsPencilFill, BsXlg } from "react-icons/bs";
+import { BsFillEyeFill, BsPencilFill, BsXLg } from "react-icons/bs";
 
 // Hooks
 import { useState, useEffect, useRef } from "react";
