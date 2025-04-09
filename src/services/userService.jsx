@@ -33,6 +33,7 @@ const getUserDetails = async (id) => {
   try {
     const res = await fetch(api + "/users/" + id, config)
       .then((res) => res.json())
+      .then((res) => console.log(res))
       .catch((err) => console.log(err));
   } catch (error) {
     console.log(error);
