@@ -50,7 +50,6 @@ const Profile = () => {
 
   const submitHandle = (e) => {
     e.preventDefault();
-
     const photoData = {
       title,
       image,
@@ -58,13 +57,16 @@ const Profile = () => {
 
     // build form data
     const formData = new FormData();
-    const photoFormData = Object.keys(photoData).foreEach((key) =>
-      formData.append(key, photoData[key])
-    );
-    formData.append("photo", photoFormData);
+    Object.keys(photoData).forEach((key) => {
+      formData.append(key, photoData[key]);
+    });
+
+    for (let pair of formData.entries()) {
+      console.log(`${pair[0]}:`, pair[1]);
+    }
+
     dispatch(publishPhoto(formData));
     setTitle("");
-    // setImage("");
     setTimeout(() => {
       dispatch(resetMessage());
     }, 2000);
@@ -109,6 +111,8 @@ const Profile = () => {
               )}
             </form>
           </div>
+          {errorPhoto && <Message msg={errorPhoto} type="error" />}
+          {messagePhoto && <Message msg={messagePhoto} type="success" />}
         </>
       )}
     </div>
